@@ -63,7 +63,7 @@ extension EpisodesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath)
         let episode = episodes[indexPath.row]
         cell.textLabel?.text = episode.name
-        cell.detailTextLabel?.text = "Runtime: \(episode.runtime)"
+        cell.detailTextLabel?.text = "Image URL: \(episode.image.medium)"
         return cell
     }
 }

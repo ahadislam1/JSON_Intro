@@ -13,9 +13,15 @@ enum JSONError: Error {
 }
 
 struct GOTEpisode: Codable {
+    
+    // MARK: - Internal Properties
+    
     let name: String
     let runtime: Int
     let summary: String
+    let image: ImageWrapper
+    
+    // MARK: - Static Methods
     
     static func getEpisodes(from data: Data) throws -> [GOTEpisode] {
         // need to read more on errors.
@@ -34,3 +40,7 @@ struct GOTEpisode: Codable {
     
 }
 
+struct ImageWrapper: Codable {
+    let medium: String
+    let original: String
+}
